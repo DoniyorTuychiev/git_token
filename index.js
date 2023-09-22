@@ -1,74 +1,48 @@
-// NodeJS da 3 ta model bor:
+// //Module FILE
+// //Module file aynanbizni filelarimiz ichiga yoziladi va saqlangani uchun Modul FILE deyiladi
 
-// Model Peckage CORE
+// const calculate = require('./hisob.js');
 
-// setTimeout(function() { //settime out Packege oz ichiga 2 ta parametrni oladi 1- function. 2- time
-//     console.log('ishga tushdi');
-// }, 5000); // ikkinkchi parametrga loop bolish vaqti kiritiladi bu orinda har 5 secunda taimeni bildirip turadi
+// const natija = calculate.kopaytirish(70, 20);
+// console.log("Natija: ", natija);
+// console.log("**************");
 
-// setInterval(function(){
-//     console.log('setInterval ishga tushudi');
-// },1000);
+// const natija_2 = calculate.bolish(40, 20);
+// console.log("Natija: ", natija_2);
+// console.log("**************");
 
-// let number = 5;
-// setInterval(() => {
-//     console.log("hisob", number);
-//     number++;
-// }, 5000);
+// const natija_3 = calculate.qoshish(77, 20);
+// console.log("Natija: ", natija_3);
+// console.log("**************");
 
-const fs = require('fs');
-const data = fs.readFileSync('./input.txt', 'utf8'); //utf8 pratocall
-console.log(data);
-console.log('***********');
+// const natija_4 = calculate.ayrish(82, 20);
+// console.log("Natija: ", natija_4);
+// console.log("**************");
 
-fs.writeFileSync('./input.txt', `${data} \n\t\t by Doni`); //n yanagi satrga otish, /t esa Tab ni bildiradi
-const new_data = fs.readFileSync("./input.txt", "utf8");
-console.log(new_data);
+///////////////////////////////////////////////////////////
+//Module Packege FILE
+//accaunt nomli File Packegeni chaqirish
 
+const Account = require("./account"); //accont.js fileda yaratgan module filelimizni module.exports = Account; bilan index.js file boglagan edik.
+//endi bu fileni chaqirib olamiz va requirer qilamiz
 
-// Module package EXTERNAL
+Account.telMeAboutClass();
+//Account.giveMeDetalis(); Bu orinda givMeDetalis methodini chaqirilsa crash beriladi
+//chunki giveMeDetalis(); methodi statik emas u class ichida yaratilgan. telMeAboutClass(); methodi esa statik va classdan tashqarida  
 
-// const moment = require('moment');
+console.log("*******************");
 
-// setInterval(() => {
-//     const time = moment().format('');
-//     console.log(`hozirgi vaqt ${time}`);
-// },5000);
+const myAccount = new Account("Doni", 205000, 1013011475124); //account modulefile dagi yaratgan contentlarimiz class ichiga qurilgani sabab
+// uni new Account childini yaratib ulaymiz
 
+myAccount.giveMeDetalis();
 
-// Inquerier Packeg
+myAccount.makeDeposit(51000);
 
+myAccount.withdrawMoney(3200);
 
-// const inquirer = require('inquirer'); //inquirer packege: terminaldan malum bir sorovga biz input orqali kiritgan qiymatimizni qabul qiliadi va hakozo...
-// inquirer
-// .prompt([{type: "input", name: "raqam", message: "raqamni kiriting?" }]) //prompt : 
-// .then(answer => {
-//     console.log("man kiritgan raqam qiymati: ", answer.raqam);
-// })
-// .catch((err) => console.log(err));
+// bugatti sotib olamiz 2,4 mln US$
+myAccount.withdrawMoney(500000);
 
-//////////// Validator
-
-// const validator = require("validator");
-// const test = validator.isEmail("foo@bar.com");// validator emailni email yoki yoq ligini tekshirib beryapti.
-// // Validator har hil narsalarni tekshiradi Ex: .isInt; .isIP vahakozo
-// console.log("test:", test);
-
-
-//4- external packege <UUID>
-
-// const { v4: uuidv4 } = require("uuid"); //uuid bizga takrorlanmas random stringlarni hosil qilib beradi Ex: random: c44809d5-cb6b-4a0e-adc7-2a874d70492b
-// const random = uuidv4();
-// console.log("random:", random); //Nodemn menda ishlamadi < shuni sorayman
-
-// //Chalk
-// // chalk contentga harhil bezaklar berishdshda ishlatiladi
-// const chalk = require("chalk");
-// const log =  console.log;
-
-// log(chalk.blue("my random number is : ") + random + chalk.red(" !"));
-
-
-
-
-// Module package FILE 
+myAccount.withdrawMoney(235000) ;
+myAccount.makeDeposit(20000);
