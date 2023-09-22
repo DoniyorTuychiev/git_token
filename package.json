@@ -1,0 +1,24 @@
+{
+  "name": "git_token",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://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@github.com/DoniyorTuychiev/git_token.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DoniyorTuychiev/git_token/issues"
+  },
+  "homepage": "https://github.com/DoniyorTuychiev/git_token#readme",
+  "dependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
