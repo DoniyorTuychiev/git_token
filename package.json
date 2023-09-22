@@ -2,7 +2,7 @@
   "name": "git_token",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "dev": "nodemon server.js",
     "train": "nodemon train.js",
@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/DoniyorTuychiev/git_token#readme",
   "dependencies": {
-    "main": "server.js",
+    "ejs": "^3.1.9",
     "express": "^4.18.2",
     "moment": "^2.29.4",
     "nodemon": "^3.0.1"
