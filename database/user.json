@@ -1,0 +1,11 @@
+{
+    "name" :"Doni",
+    "profession":"Software Engineer",
+    "age": 27,
+    "residence": "S.Korea",
+    "adress": "South Korea",
+    "Languages": ["Uzbek", "Korean","English"],
+    "skills": ["Html", "CSS", "Js", "NodeJS", "Python"],
+    "extra_skills": ["Bootstrap, Materialize", "Styling, Sass", "Django" ]
+
+}

@@ -5,13 +5,23 @@ console.log("web Serverni boshlash");
 const express = require("express");
 const app = express(); // bu yerda expressdan app nomli instens yasaldi
 const http = require("http");
+const fs = require("fs");
 
+let user;
+fs.readFile("database/user.json", "utf8", (err, data)=>{
+    if(err){
+        console.log("ERROR:", err);
+    }else{
+        user = JSON.parse(data)
+    }
+});
 //1 Kirish Code
 //bu bosqichda Expressga kirib kelyotgan malumotlarga bogliq codelar yoziladi. 
 
-app.use(express.static("public"));// bu harbir brauzerdan kirip kelyotkan sorovlar uchun public yani ochiq degani
-app.use(express.json()); //express.json(); kirip kelyotkan json formatdagi malumotlarni jsondan object formatga ozgartirib berishini bildiradi
-app.use(express.urlencoded ({extended: true})); // bu urlencoded html dagi form dan post qilingan narsalarni qabulqiladi agar bu yozilmasa ignore qiladi
+app.use(express.static("public"));// bu hamma kiruvchi clientlar uchun ochiq(public) folder bolib, bunda keyinchalik CSS filelar rasmlar saqlanadi 
+app.use(express.json()); //express.json(); kirip kelyotkan json formatdagi malumotlarni express jsondan object formatga ozgartirib beradi
+app.use(express.urlencoded ({extended: true})); // bu urlencoded html dagi form dan kirib kelyotkan 
+//malumotlarni express qabulqiladi. Agar bu yozilmasa ignore qiladi
 
 
 //2 Session Code
@@ -27,15 +37,21 @@ app.post("/create-item", (req, res) => { //post malumotni olib kelib dataBase ga
     //Request : 3 qisimdan iborat.
     // 1- URL qismi(starting line). yuqorida u "/create-item" ga tog'ri keladi
     // 2- qismi: bosh qismi(HTTP Rquest Headers) 
-    // 3 - qismi: bu body qismi  
-
+    // 3 - qismi: bu body qismi 
     console.log(req.body); // kelgan narsani body qismini chiqarish
     res.json({test:"success"}); // res.json => bu json shaklda malumotni qaytarish funcini bajaradi ; req => require, res => response
 });
 
-app.get('/', function(req, res){ // get malumotni oqish uchun ishlatiladi
-    res.render("harid");//harid nomli frameWorkkiga bog'lanadi va frontend qismini ishka tushurib beradi
+app.get("/", (req, res) => { ///person yozsam hatolik chiqdi / ni ozida esa yoq. sorayman 
+    res.render("person", { user: user });
 });
+
+
+
+// app.get('/', function(req, res){ // get malumotni oqish uchun ishlatiladi
+//     res.render("harid");//views ichiga yozilgan ejs file nomi aniq bu yerda yozilishi kerak chunki 22-qatorda biz views papkasi ichidagi ejs filega
+//     //murojat qilishni jodeJS ga korsatgan edik. harid nomli frameWorkkiga bog'lanadi va frontend qismini ishka tushurib beradi
+// });
 
 const server = http.createServer(app);
 let PORT = 4000;
