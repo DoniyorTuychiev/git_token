@@ -1,6 +1,5 @@
 //Asingcriys Function
 
-
 console.log("web Serverni boshlash");
 const express = require("express");
 const app = express(); // bu yerda expressdan app nomli instens yasaldi
