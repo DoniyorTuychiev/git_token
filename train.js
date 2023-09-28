@@ -1,9 +1,4 @@
-//Backend Languages 2 turga bolinadi 
-//1) SingleThread  => NodeJS SingleThread ga kiradi
-//2) MultipleTread
-//SingleThreadda no togri logika tashkillansa SingleThread boshqa kilientlarga javob bera olmasligi mumkin.
-// Bunioldini olish uchun biz Asncriys Functionlardan foydalanamiz.
-// Masalan: CallBack functioni shunday function va buni nilish shart
+
 
 console.log("Jack Ma maslahatlari");
 const list = ["Yaxshi talaba boling!", //0~20
