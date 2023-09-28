@@ -1,3 +1,4 @@
+//Asingcriys Function
 
 
 console.log("web Serverni boshlash");
