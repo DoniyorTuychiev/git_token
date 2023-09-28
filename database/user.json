@@ -4,8 +4,14 @@
     "age": 27,
     "residence": "S.Korea",
     "adress": "South Korea",
-    "Languages": ["Uzbek", "Korean","English"],
+    "freelance": "Available",
+    "Languages": ["Bangla", "Korean","English"],
     "skills": ["Html", "CSS", "Js", "NodeJS", "Python"],
-    "extra_skills": ["Bootstrap, Materialize", "Styling, Sass", "Django" ]
-
+    "extra_skills": ["Bootstrap, Materialize", "Styling, Sass", "Django" ],
+    "work_place":"IT company",
+    "service_desc":"Amet minim non deserunt ullamco est sit aliquao dolor do amet sint. Velit officia consequat",
+    "about_me":"Loream ipsum dolor sit amet, consectetur adipiscing elit. Et, volutpat feugiat placerat lobortis.",
+    "city": "Degu",
+    "title": ["Flower", "Seedlights","Gardner"," old","new"],
+    "flower_desc":["What is a flower?", "What is aSeedling?","Who is Gardner?"]
 }
