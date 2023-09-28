@@ -13,7 +13,7 @@ const list = ["Yaxshi talaba boling!", //0~20
 "Yoshlarga invistitsya qiling!",//50~60
 "Endi foydasi yoq !"//60~
 ];
- 
+
 function maslahatBering(a, callback) { //Bu orinda callBack yasaldiva u 2ta parametr oladi
     if (typeof a !== "number") callback("Please insert only a number!", null);// agar a numberga teng bolmasa callback birinchi parametrni qaytarib 2-chi parametrda
     //esa null yani hech qanday qiymat qaytarmaydi
@@ -23,17 +23,17 @@ function maslahatBering(a, callback) { //Bu orinda callBack yasaldiva u 2ta para
     else if (a > 40 && a <= 50) callback(null, list[3]);
     else if (a > 50 && a <= 60) callback(null, list[4]);
     else{
-
+        
         setTimeout(function() {  // bu yerda setTimeout orqali javobni 5 sekundan keyin ber deb buyruq
             callback(null, list[5]);//berdik lekin callback kutmasdan keyingi amallarga otib ketti va 
         }, 5000);                   //keyingi amallarni bajarib 5 sekund ichida. bizga javobni  berdi
     }
+}
 
-    confirm.log("I passed here 0")
-    maslahatBering(27, (err, data) =>{
-        if (err) console.log('EROR', err);
-        console.log('javob:', data);
+    console.log("I passed here 0");
+    maslahatBering(51, (err, data) => {
+        if (err) console.log("EROR", err);
+        console.log("javob:", data);
     });
 
     console.log("I passed here 1");
-}
