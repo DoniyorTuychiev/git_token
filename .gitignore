@@ -1,5 +1,3 @@
 node_modules
-clone
-database
-main.css
-person.ejs
+app.js
+reja.ejs

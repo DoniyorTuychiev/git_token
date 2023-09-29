@@ -14,7 +14,7 @@ const http = require("http");
 //db nomli ozgaruvchi qabul qilib uni server.js dan malumo oldi
 
 const db = require("../server").db(); // bu yerda / oldidan faqat bitta . (nuqta) qiyilsa bazan eror(not found './server') bolishi mumkin
-                                //shuning uchun / oldidan ..(2)ta qoyish orqali erorni bartaraf qilamiz
+                                     //shuning uchun / oldidan ..(2)ta qoyish orqali erorni bartaraf qilamiz
 
 app.use(express.static("public"));
 app.use(express.json()); 
@@ -29,6 +29,7 @@ app.post("/create-item", (req, res) => { //post malumotni olib kelib dataBase ga
     
     console.log(req.body); 
     res.json({test:"success"}); 
+
 });
 
 app.get('/', function(req, res){ 
