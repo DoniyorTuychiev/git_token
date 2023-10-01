@@ -14,6 +14,7 @@ fs.readFile("database/user.json", "utf8", (err, data)=>{
         user = JSON.parse(data)
     }
 });
+
 //1 Kirish Code
 //bu bosqichda Expressga kirib kelyotgan malumotlarga bogliq codelar yoziladi. 
 

@@ -462,6 +462,7 @@
     text-transform: capitalize;
 }
 .top_left_btn{
+    
     display: flex;
     padding: 16px 32px;
     flex-direction: row;
