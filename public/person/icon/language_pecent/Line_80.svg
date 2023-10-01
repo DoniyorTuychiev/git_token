@@ -1,0 +1,30 @@
+<svg width="222" height="6" viewBox="0 0 222 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="222" height="6" fill="#E5E5E5"/>
+<g id="Home One page- Light" clip-path="url(#clip0_0_1)">
+<rect width="1440" height="8063" transform="translate(-46 -661)" fill="#F0F0F6"/>
+<g id="Left Menu" filter="url(#filter0_d_0_1)">
+<rect id="Rectangle 1" x="-46" y="-661" width="305" height="1315" fill="white"/>
+<g id="Languages">
+<g id="Line">
+<rect id="Rectangle 8" x="0.75" y="0.75" width="220.5" height="4.5" rx="2.25" stroke="#FFB400" stroke-width="0.5"/>
+<rect id="Rectangle 9" x="2" y="2" width="208" height="2" rx="1" fill="#FFB400"/>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<filter id="filter0_d_0_1" x="-50" y="-661" width="313" height="1323" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="4"/>
+<feGaussianBlur stdDeviation="2"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape"/>
+</filter>
+<clipPath id="clip0_0_1">
+<rect width="1440" height="8063" fill="white" transform="translate(-46 -661)"/>
+</clipPath>
+</defs>
+</svg>

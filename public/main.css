@@ -38,12 +38,10 @@
     position: relative;
     width: 970px;
     height: 1259px;
-    margin-left: 30px;
-    margin-right: 27px;
+    margin: 0px 27px 0px 30px;
     display: flex;
     flex-direction: column;  
     background: var(--Background, #F0F0F6);
-    
 }
 
 .main_frame .right_frame {
@@ -53,7 +51,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #e38a8a;
+    background-color: white;
     box-shadow: 0px 0px 2px 0px black;
     
 }
@@ -70,24 +68,6 @@
     align-items: center;
     
 }
-.left_1-2{
-    position: relative;
-    width: 66.63px;
-    height: 20.9px;
-    margin-bottom: 6.65px;
-    /*H4 - 18px */
-    font-family: sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 123.6%;
-    /*or 22px */
-    display: flex;
-    justify-content: center;
-    text-transform: capitalize;
-    /*Black */
-    color: black;
-}
 
 .left_frame .left_1 .left_frame .left_1-1{
     display: flex;
@@ -97,30 +77,23 @@
     height: 142.53px;
     margin-bottom: 29.46px;
 }
-
-.main_frame .left_frame .left_3.left_1-3{
-    position: relative;
-    width: 147.84px;
-    height: 25.65px;
+.left_1-2{
     display: flex;
-    justify-content: center;
-    align-items: center;
-
-    /*Paragraph Progrss -15 */
-
+    position: relative;
+    margin-bottom: 6.65px;
+    /*H4 - 18px */
     font-family: sans-serif;
     font-style: normal;
-    font-weight: normal;
-    font-size: 15px;
-    line-height: 24px;
-    /* or 160*/
-
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 123.6%;
+    /*or 22px */
+    justify-content: center;
+    align-items: center;
     text-transform: capitalize;
-    font-feature-settings: 'calt' off, 'ker' off;
-
-    /*Paragraph Font*/
+    /*Black */
+    color: black;
 }
-
 .link_href{
     text-decoration: none;
     color: black;
@@ -135,15 +108,19 @@
     width: 238px;
     margin-top: 19px;
     
+    
 }
 
 .icon{
+    display: flex;
     position: relative;
+    align-items: center;
+    justify-content: center;
     width: 24.99px;
     height: 22.8px;
     border-radius: 50%;
     filter: drop-shadow(0 4px rgb(0, 0, 0, 0, 25));
-    background-color: #fdf584;
+    background-color: #e5ad03;
 
 }
 .main_frame .left_frame .left_4{
@@ -152,7 +129,6 @@
     height: 252px;
     margin-top: 25px;
     margin-left: 45px;
-    /* background-color: #6281e7; */
 }
 
 .main_frame .left_frame .left_5{
@@ -161,7 +137,6 @@
     height: 148px;
     margin-top: 25px;
     margin-left: 45px;
-    /* background-color: #6281e7; */
 }
 
 .left_frame .marginer{
@@ -171,7 +146,6 @@
     margin-left: 40px;
     margin-bottom: 25px;
     margin-top: 39px;
-    /* background: yellow; */
     border: 1.5px solid greenyellow;
 }
 
@@ -192,6 +166,7 @@
     position: relative;
     justify-content: space-between;
 }
+
 /* Left 2 boyicha . birinchi bolim */
 .left_age-1{
     width: 33.15px;
@@ -340,6 +315,12 @@
     justify-content: space-between;
     margin-top: 10px;
 }
+.left_languages{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+/*3 tugadi */
 /* left_4 ni boshlanishi */
 
 .main_frame .left_frame .left_4{
@@ -361,6 +342,11 @@
     line-height: 123.6%; /* 22.248px */
     text-transform: capitalize;
 }
+.left_skills_1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
 .left_4_c{
     display: flex;
     position: relative;
@@ -369,37 +355,28 @@
 }
 /*left 4 tugadi*/
 
-/*left_5 ni boshlanishi */
-.main_frame .left_frame .left_5{
-    display: flex;
-    position: relative;
-    justify-content:space-between;
-    flex-direction: column;
-    width: 221px;
-    height: 126px;
-    margin-left: 44px;
-}
 .left_extraSkills{
     color: #2B2B2B;
-    /* H4 - 18px */
     font-family: Inter;
     font-size: 18px;
     font-style: normal;
     font-weight: 500;
     line-height: 123.6%; /* 22.248px */
     text-transform: capitalize;
-}
-.left_5_c{
-    display: flex;
-    position: relative;
-    justify-content: start;
-    margin-top: 10px;
+    margin-bottom: 20px;
 }
 .left_icon_5{
-    width: 15px;
-    height: 15px;
+    display: flex;
+    position: relative;
+    flex-direction:row;
+    justify-content: start;
     flex-shrink: 0;
+    margin-top: 10px;
 }
+.e_skills_5{
+    margin-right: 10px;
+}
+
 /*5 tugadi*/
 
 /*midd top frame boshlandi */
@@ -411,7 +388,6 @@
     width: 971px;
     height: 454.328px;
     flex-shrink: 0;
-    
     margin-bottom: 148.67px;
     background-color: white;
     box-shadow: 0px 1px 3px black;
@@ -419,12 +395,29 @@
 .midd_frame_eclipse{
     position: absolute;   
 }
-.eclips{
-   
-    background-color: #7EB942;
+.eclips_1{
+    /* background-color:white; */
     width: 16.016px;
     height: 15.566px;
     flex-shrink: 0;
+    position: absolute;
+    margin: 3px 90px 0px 930px;
+}
+.eclips_2{
+    /* background-color:white; */
+    width: 16.016px;
+    height: 15.566px;
+    flex-shrink: 0;
+    position: absolute;
+    margin: 160px 120px 0px 260px;
+}
+.eclips_3{
+    /* background-color:white; */
+    width: 16.016px;
+    height: 15.566px;
+    flex-shrink: 0;
+    position: absolute;
+    margin: 20px 37px 0px 460px;
 }
 .midd_top_left{
     /* display: flex; */
@@ -474,7 +467,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin-bottom: 61.93px;
+    margin-top: 61.93px;
     border-radius: 5px;
     background: #FFB400;
 
@@ -598,8 +591,6 @@
     width: 310px;
     height: 225px;
     flex-shrink: 0;
-    /* margin-top: 20px;
-    margin-right: 20px; */
     background-color:white;
 }
 .midd_bottom_f{
@@ -609,10 +600,11 @@
     background-color:white;
 }
 .midd_bottom_e{
+    justify-content: center;
+    align-items: center;
     width: 310px;
     height: 225px;
     flex-shrink: 0;
-    /* margin-left: 20px; */
     background-color:white;
 }
 .midd_b_codingicon{
@@ -625,7 +617,6 @@
 .m_b-3_h1{
     text-align: center;
     color: var(--Black, #2B2B2B);
-    /* H4 - 18px */
     font-family: Inter;
     font-size: 18px;
     font-style: normal;
@@ -633,17 +624,28 @@
     line-height: 123.6%; /* 22.248px */
     text-transform: capitalize;
 }
+.m_b-3_final{
+    text-align: center;
+    color: var(--Black, #2B2B2B);
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 123.6%; /* 22.248px */
+    text-transform: capitalize;
+    margin-top: 60px;
+
+}
 .m_b_par{
     color: var(--Paragraph-Font, #767676);
     text-align: center;
     font-kerning: none;
     font-feature-settings: 'calt' off;
-    /* Paragraph Progress - 15 */
     font-family: Inter;
     font-size: 15px;
     font-style: normal;
     font-weight: 400;
-    line-height: 24px; /* 160% */
+    line-height: 24px; 
     text-transform: capitalize;
 }
 .m_b_par_c{
@@ -665,17 +667,16 @@
     /* background-color: white; */
 }
 .m_b-3_btn{
-    margin: 0px 129px 28px 105px;
+    margin: 25px 0px 0px 110px;
     text-align: center;
     width: 69px;
-    height: 14px;
+    height: 14;
     color: var(--Yellow, #FFB400);
     font-family: Roboto;
     font-size: 12px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-
 }
 
 /*midd bottom frame tugadi */
@@ -683,21 +684,25 @@
 /*right frame boshlandi*/
 
 .topIcon_r_fr{
-    width: 30px;
-    height: 30px;
+    /* width: 30px;
+    height: 30px; */
     flex-shrink: 0;
     margin: 50px 39px 174px 39px;
-    border-radius: 100px;
+    border-radius: 70px;
+    border: none;
+    background-color: white;
+    
 }
 
 .home_text_a{
     color: white;
-    width: 65px;
-    height: 33px;
+    /* width: 65px;
+    height: 33px; */
     flex-shrink: 0;
     fill: #2B2B2B;
     margin-bottom: 5px;
-    background-color: black;
+    background-color: white;
+    border: none;
 }
 .home_icon_b{
     width: 40px;
@@ -705,6 +710,7 @@
     flex-shrink: 0;
     margin-bottom: 43px;
     border-radius: 100px;
+    background-color: #fcae1e;
 }
 .file_icon_c{
     width: 40px;
@@ -713,6 +719,7 @@
     margin-bottom: 43px;
     height: 40px;
     border-radius: 100px;
+    background-color:rgb(244, 241, 241);
 }
 .student_icon_d{
     width: 40px;
@@ -720,6 +727,7 @@
     flex-shrink: 0;
     margin-bottom: 43px;
     border-radius: 100px;
+    background-color:rgb(244, 241, 241);
 }
 .portfel_icon_e{
     width: 40px;
@@ -727,6 +735,7 @@
     flex-shrink: 0; 
     margin-bottom: 43px;
     border-radius: 100px;
+    background-color:rgb(244, 241, 241);
 }
 .blog_icon_f{
     width: 40px;
@@ -734,12 +743,14 @@
     flex-shrink: 0;   
     margin-bottom: 43px;
     border-radius: 100px;
+    background-color:rgb(244, 241, 241);
 }
 .contact_icon_g{
     width: 40px;
     height: 40px;
     flex-shrink: 0; 
     border-radius: 100px; 
+    background-color:rgb(244, 241, 241);
 }
 
 /*right frame tugadi*/

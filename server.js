@@ -37,7 +37,7 @@ app.post("/create-item", (req, res) => { //post malumotni olib kelib dataBase ga
     res.json({test:"success"}); // res.json => bu json shaklda malumotni qaytarish funcini bajaradi ; req => require, res => response
 });
 
-app.get("/", (req, res) => { ///person yozsam hatolik chiqdi / ni ozida esa yoq. sorayman 
+app.get('/', (req, res) => { ///person yozsam hatolik chiqdi / ni ozida esa yoq. sorayman 
     res.render("person", { user: user });
 });
 
