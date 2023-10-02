@@ -2,8 +2,7 @@
 
 console.log("web Serverni boshlash");
 const express = require("express");
-const app = express(); // bu yerda expressdan app nomli instens yasaldi
-const http = require("http");
+const app = express(); 
 
 //Mongo DB ulash
 //Mongo DB ni ulash 2 xil usulda amlga oshiriladi
@@ -26,13 +25,44 @@ app.set("view engine", "ejs");
 //4 Routing Code keyingibosqichda rooterlar uchun
 
 app.post("/create-item", (req, res) => { //post malumotni olib kelib dataBase ga yozadi. Postda req ni tarkibida body qismida malumot keladi; 
+    console.log('user entered create-item /');
+    const new_reja = req.body.reja;
+    db.collection("plans").insertOne({reja: new_reja}, (err, data) => {
+    // if(err){
+    //     console.log(err);
+    //     res.end("somthing went wrong");
+    // }else{
+    //     res.end("seccessed ");
+    // }
     
-    console.log(req.body); 
-    res.json({test:"success"}); 
-
+    try{
+        res.end("successfuly added");
+    }catch{
+        console.log(err);
+        res.end("somthing went wrong");
+    }
+    });
 });
 
-app.get('/', function(req, res){ 
+app.get('/', function(req, res) { 
+    console.log('user entered /');
+    db.collection("plans")
+    .find()
+    .toArray((err, data) => {
+        // if(err){
+        //     console.log(err);
+        //     res.end("somthing went wrong");
+        // }else{
+        //     res.render("reja", {items: data});
+        // }        
+        try{   
+            console.log(data);
+            res.render("reja", {items: data}); // ejs ga malumotlarni past qilish (DB dan qanday malumot olyotkanini korish)uchun aval 
+        }catch{                                     //items nomli object yasab datani unga yukladik 
+            console.log(err);
+            res.end("somthing went wrong");
+        }
+    });
     res.render("reja");
 });
 
