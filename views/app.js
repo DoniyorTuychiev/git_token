@@ -7,44 +7,39 @@ const app = express();
 //Mongo DB ulash
 //Mongo DB ni ulash 2 xil usulda amlga oshiriladi
 
-// 1- usul ogridan ogri ulash
-//2 - usul Mongus Packege orqali ishlaish
+// 1- usul togridan togri ulash
+//2 - usul Mongus Packege orqali ulaish
 
 //db nomli ozgaruvchi qabul qilib uni server.js dan malumo oldi
 
-const db = require("../server").db(); // bu yerda / oldidan faqat bitta . (nuqta) qiyilsa bazan eror(not found './server') bolishi mumkin
-                                     //shuning uchun / oldidan ..(2)ta qoyish orqali erorni bartaraf qilamiz
+const db = require("../server").db(); // 
+// const mongodb = require("mongodb");
 
 app.use(express.static("public"));
 app.use(express.json()); 
 app.use(express.urlencoded ({extended: true})); 
 
-app.set("views", "views"); 
-app.set("view engine", "ejs"); 
+app.set("views", "views"); //global seting sifatida frontendni backendda quryapmiz
+app.set("view engine", "ejs"); //EJS orqali
 
-//4 Routing Code keyingibosqichda rooterlar uchun
+//4 [R,o,u,t,i,n,g] Code keyingibosqichda rooterlar uchun
 
 app.post("/create-item", (req, res) => { //post malumotni olib kelib dataBase ga yozadi. Postda req ni tarkibida body qismida malumot keladi; 
-    console.log('user entered create-item /');
+    console.log('user entered /create-item /');
     const new_reja = req.body.reja;
     db.collection("plans").insertOne({reja: new_reja}, (err, data) => { 
-    try{
-        res.end("successfuly added");
-    }catch{
-        console.log(err);
-        res.end("somthing went wrong");
-    }
+        res.json(data.ops[0]);
     });
 });
-
-app.get('/', function(req, res) { 
-    console.log('user entered /');
-    db.collection("plans")
-    .find()
-    .toArray((err, data) => {       
+    app.get('/', function(req, res) { 
+        console.log('user entered /');
+        db.collection("plans")
+        .find()
+        .toArray((err, data) => {  
         try{   
-            console.log(data);
-            res.render("reja", {items: data}); // ejs ga malumotlarni past qilish (DB dan qanday malumot olyotkanini korish)uchun aval 
+            console.log("data:", data);
+            //res(response)ni turlari: res.json()/res.end()/res.render("EJS", data)
+            res.render("reja", {items: data}); // response qil reja nomli ejs filedan datalarni items ga yuklagan holda
         }catch{                                     //items nomli object yasab datani unga yukladik 
             console.log(err);
             res.end("somthing went wrong");
