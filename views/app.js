@@ -31,19 +31,36 @@ app.post("/create-item", (req, res) => { //post malumotni olib kelib dataBase ga
         res.json(data.ops[0]);
     });
 });
-
+//Deleting-item buttonni MongoDB ga ulanib dtani ochirish qismi
 app.post("/delete-item", (req, res) => {
     const id = req.body.id;
     console.log(id);
     db.collection("plans").deleteOne(
         { _id: new mongodb.ObjectId(id) }, 
         function(err, data){
-        res.json({state: "success"})
+        res.json({state: "successed deleting item"})
     })
 });
-
-
-
+//Editing-item buttonni MongoDB ga ulanib datani edit qilish qismi
+app.post("/edit-item", (req, res) => {
+    const data = req.body;
+    console.log(data);
+    db.collection("plans").findOneAndUpdate(
+        {_id: new mongodb.ObjectId(data.id) },
+        {$set: {reja: data.new_input } },
+        function (err, data) {
+            res.json({ state: "successed editing item"});
+        }
+    );
+});
+//Delating-All buttonni MongoDB ga ulanib hamma datalarni ochirish qismi  qismi
+app.post ("/delete-all", (req, res) => {
+    if(req.body.delete_all) {
+        db.collection("plans").deleteMany(function () {
+            res.json({ state: "successed deleting all items"});
+        });
+    }
+});
 
 app.get('/', function(req, res) { 
     console.log('user entered /');

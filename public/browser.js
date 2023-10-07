@@ -1,3 +1,5 @@
+
+
 console.log("Frontend JS ishka tushdi");
 
 function itemTemplate(item) {
@@ -63,6 +65,43 @@ document.addEventListener("click", function(e) { // har qanday tugma bosilganda
 
     //Edit operation
     if(e.target.classList.contains("edit-me")){
-        alert("siz Editni bostingiz");
+        let userInput = prompt
+        ("Ozgartirish kiriting",
+        e.target.parentElement.parentElement.querySelector(".item-text").innerHTML //innerHTML datani textini olib beradi
+        );
+        if(userInput) {
+            axios
+            .post("/edit-item", 
+                { id: e.target.getAttribute("data-id"),
+                new_input: userInput,
+            
+            })
+            .then((response) => {
+                console.log(response.data);
+                e.target.parentElement.parentElement.querySelector(".item-text")
+                .innerHTML = userInput;
+            })
+            .catch((err) => {
+                console.log("Iltimos qaytadan harakat qiling!");
+            });
+        }
+    }
+});
+
+//Hammasini ochirish tugmasi
+
+document
+.getElementById("clean-all")
+.addEventListener("click", function() {
+    if(confirm("Hammasini ochirmoqchimisiz?")){
+        axios
+        .post("/delete-all", { delete_all: true})
+        .then((response) => {
+            alert(response.data.state);
+            document.location.reload();//reload bu biz turgan pageni reload qiladi
+        })
+        .catch((err) => {
+            console.log("Iltimos qaytadan harakat qiling!");
+        });
     }
 });
