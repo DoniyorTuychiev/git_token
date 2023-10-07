@@ -13,7 +13,7 @@ const app = express();
 //db nomli ozgaruvchi qabul qilib uni server.js dan malumo oldi
 
 const db = require("../server").db(); // 
-// const mongodb = require("mongodb");
+const mongodb = require("mongodb");
 
 app.use(express.static("public"));
 app.use(express.json()); 
@@ -31,11 +31,25 @@ app.post("/create-item", (req, res) => { //post malumotni olib kelib dataBase ga
         res.json(data.ops[0]);
     });
 });
-    app.get('/', function(req, res) { 
-        console.log('user entered /');
-        db.collection("plans")
-        .find()
-        .toArray((err, data) => {  
+
+app.post("/delete-item", (req, res) => {
+    const id = req.body.id;
+    console.log(id);
+    db.collection("plans").deleteOne(
+        { _id: new mongodb.ObjectId(id) }, 
+        function(err, data){
+        res.json({state: "success"})
+    })
+});
+
+
+
+
+app.get('/', function(req, res) { 
+    console.log('user entered /');
+    db.collection("plans")
+    .find()
+    .toArray((err, data) => {  
         try{   
             console.log("data:", data);
             //res(response)ni turlari: res.json()/res.end()/res.render("EJS", data)

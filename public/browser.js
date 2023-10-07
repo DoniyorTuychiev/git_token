@@ -30,7 +30,6 @@ document
 .addEventListener("submit", function (e) {
 e.preventDefault(); // / orqali host qilinganga byDefault bolib successed add bolmaslidi uchun preventDefault qoyildi
 
-
 axios
     .post("/create-item", { reja: createField.value })
     .then((response) => {
@@ -43,4 +42,27 @@ axios
     .catch((err) => {
         console.log("Qaytadan harakat qiling!");
     });
+});
+
+document.addEventListener("click", function(e) { // har qanday tugma bosilganda
+    //delete operation
+    console.log(e.target);
+    if(e.target.classList.contains("delete-me")) { //contains classList ichida delete-me nomli buyruq mavjudmi degan manoni bildiradi
+        if(confirm("Aniq ochirmoqchimisiz?")) {
+            axios
+            .post("/delete-item", { id: e.target.getAttribute("data-id") })
+            .then((response) => {
+                console.log(response.data);
+                e.target.parentElement.parentElement.remove();
+            })
+            .catch((err) => {
+                console.log("Iltimos qaytadan harakat qiling!");
+            });
+        }
+    }
+
+    //Edit operation
+    if(e.target.classList.contains("edit-me")){
+        alert("siz Editni bostingiz");
+    }
 });
