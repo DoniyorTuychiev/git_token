@@ -19,7 +19,7 @@ mongodb.connect(// mongo db ichida connect nomli mehod bor va u 3 a paramer olad
 
             const app = require("./views/app");//mongoDB ga ulanish muvifaqyatli bolsa, app.js da express boshlanadi
             const server = http.createServer(app);
-            let PORT = 4000;
+            let PORT = 7002;
             server.listen(PORT, function () {
                 console.log(`The server is running successfully on part : ${PORT}, http://localhost:${PORT}`//http://localhost:${PORT} orqali linkniyam consolda kora olamiz
                 );

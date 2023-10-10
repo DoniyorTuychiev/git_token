@@ -10,14 +10,14 @@ function itemTemplate(item) {
      class="item-text">${item.reja}</span>
     <div>
         <button 
-         data-id="${item._id}" 
-         class="edit-me btn btn-secondary btn-sm mr-1"
+            data-id="${item._id}" 
+            class="edit-me btn btn-secondary btn-sm mr-1"
          >
             Ozgartirish
         </button>
         <button 
-         data-id="${item._id}"
-         class="delete-me btn btn-danger btn-sm"
+            data-id="${item._id}"
+            class="delete-me btn btn-danger btn-sm"
          >
          Ochirish
          </button>
@@ -90,6 +90,22 @@ document.addEventListener("click", function(e) { // har qanday tugma bosilganda
 
 //Hammasini ochirish tugmasi
 
+function itemDeleteAll(item){
+    return `<li
+    class="list-group-item list-group-item-info d-flex aligin-items-center justify-content-between"
+   >
+   <span
+    class="item-text">${item.reja}</span>
+   <div>
+   <button id="clean-all" class="btn btn-denger" style="border-radius: 20px ; color: black; background-color: greenyellow;"
+   >
+        Hamma Rejalarni O'chirish
+    </button>
+    </li>`;
+}
+
+
+
 document
 .getElementById("clean-all")
 .addEventListener("click", function() {
@@ -98,7 +114,9 @@ document
         .post("/delete-all", { delete_all: true})
         .then((response) => {
             alert(response.data.state);
-            document.location.reload();//reload bu biz turgan pageni reload qiladi
+            document
+            .location 
+            .reload();//reload bu biz turgan pageni reload qiladi
         })
         .catch((err) => {
             console.log("Iltimos qaytadan harakat qiling!");
